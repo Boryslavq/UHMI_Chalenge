@@ -2,12 +2,13 @@ from sqlalchemy import Column, ForeignKey, Integer, String, Float, Date
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
+from data import config
 
 
 class ConnectDB:
     def __init__(self):
         super(ConnectDB, self).__init__()
-        self.engine = create_engine(r'sqlite:///d:\Challenge\utils\statistic.db')
+        self.engine = create_engine(config.sqlite_url)
         self.Session = sessionmaker(bind=self.engine)
         self.Base = declarative_base()
         self.session = self.Session()
