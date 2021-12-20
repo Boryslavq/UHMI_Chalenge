@@ -54,12 +54,6 @@ def test_records():
             print(parse_for_records(rec))
 
 
-def parse_for_moving(moving_dict: dict):
-    """Function which decomposes json from route /moving_mean"""
-    for key, value in moving_dict.values():
-        print(key, value)
-
-
 def test_moving_mean():
     """Function which sends get request to /moving_means with parameters"""
 
